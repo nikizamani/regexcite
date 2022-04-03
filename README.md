@@ -30,9 +30,9 @@ devtools::install_github("nikizamani/regexcite")
 
 ## Usage
 
-A fairly common task when dealing with strings is the need to split a
+() A fairly common task when dealing with strings is the need to split a
 single string into many parts. This is what `base::strplit()` and
-`stringr::str_split()` do.
+`stringr::str_split()` does.
 
 ``` r
 (x <- "alfa,bravo,charlie,delta")
@@ -53,6 +53,12 @@ That’s exactly what `regexcite::str_split_one()` does.
 
 ``` r
 library(regexcite)
+#> 
+#> Attaching package: 'regexcite'
+#> The following object is masked _by_ '.GlobalEnv':
+#> 
+#>     str_split_one
+
 str_split_one(x, pattern = ",")
 #> [1] "alfa"    "bravo"   "charlie" "delta"
 ```
@@ -67,6 +73,7 @@ safety, it will error if its input has length greater than one.
 ``` r
 str_split_one(x, pattern = ",", n = 2)
 #> [1] "alfa"                "bravo,charlie,delta"
+
 y <- "192.168.0.1"
 str_split_one(y, pattern = stringr::fixed("."))
 #> [1] "192" "168" "0"   "1"

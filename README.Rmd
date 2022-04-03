@@ -1,4 +1,3 @@
-
 ---
 output: github_document
 ---
@@ -18,6 +17,10 @@ knitr::opts_chunk$set(
 [rex](https://cran.r-project.org/package=rex), and
 [rematch2](https://cran.r-project.org/package=rematch2).**
 
+```{r sources, include=FALSE}
+source("R/str_split_one.r")
+```
+
 # regexcite
 
 <!-- badges: start -->
@@ -29,16 +32,16 @@ It provides convenience functions to make some common tasks with string manipula
 ## Installation
 
 You can install the development version of regexcite from [GitHub](https://github.com/) with:
-      
+
 ``` r
 # install.packages("devtools")
-devtools::install_github("jennybc/regexcite")
+devtools::install_github("nikizamani/regexcite")
 ```
 
 ## Usage
-
+()
 A fairly common task when dealing with strings is the need to split a single string into many parts.
-This is what `base::strplit()` and `stringr::str_split()` do.
+This is what `base::strplit()` and `stringr::str_split()` does.
 
 ```{r}
 (x <- "alfa,bravo,charlie,delta")
